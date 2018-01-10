@@ -1,0 +1,12 @@
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.dll
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.pdb
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\WebDriver.dll
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\WebDriver.Support.dll
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\WebDriver.xml
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\WebDriver.Support.xml
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.dll
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.pdb
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\log4net.dll
+C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\log4net.xml

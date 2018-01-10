@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinerTests", "Onliner\OnlinerTests.csproj", "{136058D7-867A-4A23-8232-67381EBB4F54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlinerLibrary", "OnlinerLibrary\OnlinerLibrary.csproj", "{73B98137-3802-4FB1-B2F3-E85C0A66BF1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{136058D7-867A-4A23-8232-67381EBB4F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136058D7-867A-4A23-8232-67381EBB4F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136058D7-867A-4A23-8232-67381EBB4F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136058D7-867A-4A23-8232-67381EBB4F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B98137-3802-4FB1-B2F3-E85C0A66BF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B98137-3802-4FB1-B2F3-E85C0A66BF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B98137-3802-4FB1-B2F3-E85C0A66BF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B98137-3802-4FB1-B2F3-E85C0A66BF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {572CED9D-90EE-49FD-914C-396822EE64CA}
+	EndGlobalSection
+EndGlobal

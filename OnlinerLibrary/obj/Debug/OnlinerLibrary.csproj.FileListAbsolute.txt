@@ -10,3 +10,15 @@ C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.dl
 C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.pdb
 C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\log4net.dll
 C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\log4net.xml
+D:\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.csprojResolveAssemblyReference.cache
+D:\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.dll
+D:\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.pdb
+D:\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.dll
+D:\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.pdb
+D:\Onliner\OnlinerLibrary\bin\Debug\log4net.dll
+D:\Onliner\OnlinerLibrary\bin\Debug\WebDriver.dll
+D:\Onliner\OnlinerLibrary\bin\Debug\WebDriver.Support.dll
+D:\Onliner\OnlinerLibrary\bin\Debug\log4net.xml
+D:\Onliner\OnlinerLibrary\bin\Debug\WebDriver.xml
+D:\Onliner\OnlinerLibrary\bin\Debug\WebDriver.Support.xml
+D:\Onliner\OnlinerLibrary\bin\Debug\Drivers\chromedriver.exe

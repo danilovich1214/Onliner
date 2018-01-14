@@ -20,7 +20,7 @@ namespace OnlinerLibrary.BaseElement
         public void Click()
         {
             WaitForElementIsPresent();
-            Element?.Click();
+            Element.Click();
         }
     }
 }

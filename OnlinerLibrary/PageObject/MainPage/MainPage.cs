@@ -7,7 +7,7 @@ namespace OnlinerLibrary.PageObject.MainPage
     {
         public static By TitleLocator = By.XPath("");
 
-        public static By LocatorDivGoToLoginPage = By.XPath("//div[contains(@class='auth-bar__item--text')]");
+        public static By LocatorDivGoToLoginPage = By.XPath("//div[@class='auth-bar__item auth-bar__item--text']");
 
         public static By LocatorDivProfileImage = By.CssSelector("div[class='b-top-profile__image']");
 
@@ -23,7 +23,6 @@ namespace OnlinerLibrary.PageObject.MainPage
         public void GoToLoginPage()
         {
             var btnGoToLoginPage = new Button(LocatorDivGoToLoginPage);
-            btnGoToLoginPage.GetElement();
             btnGoToLoginPage.Click();
         }
 
@@ -36,6 +35,12 @@ namespace OnlinerLibrary.PageObject.MainPage
         public bool IsProfileImageDisplayed()
         {
             return GetElement(LocatorDivProfileImage).Displayed;
+        }
+        
+        public string GetCatalogHref()
+        {
+            Link catalogLink = new Link(LocatorLinkMainNavigationCatalog);
+            return catalogLink.GetHref();
         }
     }
 }

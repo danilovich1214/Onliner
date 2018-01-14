@@ -2,6 +2,7 @@
 using OnlinerLibrary;
 using OnlinerLibrary.PageObject.LoginPage;
 using OnlinerLibrary.PageObject.MainPage;
+using OnlinerLibrary.PageObject.CategoryPage;
 
 namespace OnlinerTests
 {
@@ -35,6 +36,14 @@ namespace OnlinerTests
             var loginPage = new LoginPage();
             loginPage.LogIn(username, password);
             Assert.IsTrue(mainPage.IsProfileImageDisplayed());
+
+            Logger.Instance.LogStep(3, "Go To Category Page");
+            string catalogHref = mainPage.GetCatalogHref();
+            CategoryPage categoryPage = new CategoryPage(catalogHref);
+            categoryPage.Navigate();
+
+            categoryPage.GetRandomItemLabel();
+            categoryPage.NavigateToUrl(categoryPage.GetHrefCatalogItemLabel());            
         }
     }
 }

@@ -26,6 +26,11 @@ namespace OnlinerLibrary
             Driver.Browser.Navigate().GoToUrl(this.Url);
         }
 
+        public void NavigateToUrl(string url)
+        {
+            Driver.Browser.Navigate().GoToUrl(url);
+        }
+
         public IWebElement GetElement(By locator)
         {
             return Driver.Browser.FindElement(locator);

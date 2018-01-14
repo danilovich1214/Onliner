@@ -1,11 +1,13 @@
 ﻿using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
 
 namespace OnlinerLibrary.BaseElement
 {
     public class Link: BaseElement
     {
         public Link(By locator) : base(locator)
-        { }
+        {}
 
         protected override string GetElementType()
         {

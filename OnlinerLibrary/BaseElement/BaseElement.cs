@@ -3,6 +3,7 @@ using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using System.Collections.Generic;
 
 namespace OnlinerLibrary.BaseElement
 {
@@ -22,6 +23,19 @@ namespace OnlinerLibrary.BaseElement
             try
             {
                 Element = Driver.Browser.FindElement(Locator);
+            }
+            catch (NoSuchElementException)
+            {
+                Log.Fail("Element not found");
+            }
+            return Element;
+        }
+
+        public IWebElement GetElementByLocator(By locator)
+        {
+            try
+            {
+                Element = Driver.Browser.FindElement(locator);
             }
             catch (NoSuchElementException)
             {
@@ -61,6 +75,12 @@ namespace OnlinerLibrary.BaseElement
             var action = new Actions(Driver.Browser);
             action.Click(Element);
             action.Perform();
+        }
+
+        public string GetAttribute(string attr)
+        {
+            WaitForElementIsPresent();
+            return Element.GetAttribute(attr);
         }
     }
 }

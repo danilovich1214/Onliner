@@ -1,4 +1,5 @@
 ﻿using System;
+using OnlinerLibrary.BaseElement;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -13,12 +14,12 @@ namespace OnlinerLibrary
         {
             this.Url = url;
             TitleLoactor = titleLocator;
-            AssertIsOpen();
         }
 
-        private void AssertIsOpen()
+        public void AssertIsOpen()
         {
-           
+           var baseLabel = new Label(TitleLoactor);
+           baseLabel.WaitForElementIsPresent();
         }
 
         public void Navigate()

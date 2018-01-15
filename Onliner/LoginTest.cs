@@ -7,8 +7,8 @@ namespace OnlinerTests
     [TestClass]
     public class LoginTest
     {
-        string username = "bluerayend@gmail.com";
-        string password = "1234567";
+        public readonly string Username = "bluerayend@gmail.com";
+        public readonly string Password = "1234567";
 
         [TestInitialize]
         public void SetupTest()
@@ -25,24 +25,28 @@ namespace OnlinerTests
         [TestMethod]
         public void LogInAndGoToCategory()
         {
-            Logger.Instance.LogStep(1, "Open main Onliner page");
+            Logger.Instance.LogStep(1, "First Step1111111111111111111");
             var mainPage = new MainPage();
             mainPage.Navigate();
+            mainPage.AssertIsOpen();
 
-            Logger.Instance.LogStep(2, "Open login page and log in");
             mainPage.GoToLoginPage();
             var loginPage = new LoginPage();
-            loginPage.LogIn(username, password);
-            Assert.IsTrue(mainPage.IsProfileImageDisplayed());
+            loginPage.AssertIsOpen();
 
-            Logger.Instance.LogStep(3, "Go To Category Page");
-            CategoryPage categoryPage = new CategoryPage();
+            loginPage.LogIn(Username, Password);
+            mainPage.CkeckProfileImageIsDisplayed();
+            
+            var categoryPage = new CategoryPage();
             categoryPage.Navigate();
+            categoryPage.AssertIsOpen();
 
-            Logger.Instance.LogStep(4, "");
-            categoryPage.GetRandomItemLabel();
-            categoryPage.NavigateToUrl(categoryPage.GetHrefCatalogItemLabel());
-            categoryPage.CheckGoToCategorySuccessfull();
+            var categoryText = categoryPage.GoToRandomCategory();
+            categoryPage.CheckGoToCategorySuccessfull(categoryText);
+
+            categoryPage.ClickToProfileImage();
+            categoryPage.LogOut();
+            categoryPage.CheckLogOutIsSuccessfull();
         }
     }
 }

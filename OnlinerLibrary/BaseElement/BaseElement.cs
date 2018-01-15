@@ -44,19 +44,6 @@ namespace OnlinerLibrary.BaseElement
             return Element;
         }
 
-        public IWebElement GetLowerLevelItem(By locator)
-        {
-            try
-            {
-                Element = this.GetElement().FindElement(locator);
-            }
-            catch (NoSuchElementException)
-            {
-                Log.Fail("Element not found");
-            }
-            return Element;
-        }
-
         protected abstract string GetElementType();
 
         public void WaitForElementIsPresent()
@@ -76,18 +63,10 @@ namespace OnlinerLibrary.BaseElement
             });
         }
 
-        public void Focus()
-        {
-            WaitForElementIsPresent();
-            new Actions(Driver.Browser).MoveToElement(Element).Build().Perform();
-        }
-
         public void ActionsClick()
         {
             WaitForElementIsPresent();
-            var action = new Actions(Driver.Browser);
-            action.Click(Element);
-            action.Perform();
+            new Actions(Driver.Browser).MoveToElement(Element).Click(Element).Perform();
         }
 
         public string GetAttribute(string attr)

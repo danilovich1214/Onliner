@@ -1,18 +1,16 @@
-﻿using OnlinerLibrary.BaseElement;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OnlinerLibrary.BaseElement;
 using OpenQA.Selenium;
 
 namespace OnlinerLibrary.PageObject
 {
     public class MainPage : BasePage
     {
-        public static By TitleLocator = By.XPath("");
+        public static By TitleLocator = By.CssSelector("div[class='b-tiles cfix ']");
 
         public static By LocatorDivGoToLoginPage = By.XPath("//div[@class='auth-bar__item auth-bar__item--text']");
 
         public static By LocatorDivProfileImage = By.CssSelector("div[class='b-top-profile__image']");
-
-        public static By LocatorLinkMainNavigationCatalog =
-            By.XPath("//ul[@class='b-main-navigation']/li/a[@class='b-main-navigation__link']");
 
         public MainPage()
             : base(@"http://onliner.by/", TitleLocator)
@@ -23,24 +21,13 @@ namespace OnlinerLibrary.PageObject
         public void GoToLoginPage()
         {
             var btnGoToLoginPage = new Button(LocatorDivGoToLoginPage);
-            btnGoToLoginPage.Click();
+            btnGoToLoginPage.ActionsClick();
         }
 
-        public void GoToCategoryPage()
+        public void CkeckProfileImageIsDisplayed()
         {
-            var categoryLink = new Link(LocatorLinkMainNavigationCatalog);
-            categoryLink.Click();
-        }
-
-        public bool IsProfileImageDisplayed()
-        {
-            return GetElement(LocatorDivProfileImage).Displayed;
-        }
-
-        public string GetCatalogHref()
-        {
-            var catalogLink = new Link(LocatorLinkMainNavigationCatalog);
-            return catalogLink.GetHref();
+            Assert.IsTrue(GetElement(LocatorDivProfileImage).Displayed,
+                "The profile image is not displayed");
         }
     }
 }

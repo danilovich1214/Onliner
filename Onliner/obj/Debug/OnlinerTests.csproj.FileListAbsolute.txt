@@ -44,3 +44,4 @@ D:\Onliner\Onliner\bin\Debug\WebDriver.Support.xml
 D:\Onliner\Onliner\bin\Debug\log4net.xml
 D:\Onliner\Onliner\bin\Debug\Drivers\chromedriver.exe
 C:\Users\Evgenij\source\repos\Onliner\Onliner\bin\Debug\Drivers\chromedriver.exe
+C:\Users\Evgenij\source\repos\Onliner\Onliner\bin\Debug\OnlinerLibrary.dll.config

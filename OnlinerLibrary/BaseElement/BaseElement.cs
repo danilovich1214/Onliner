@@ -44,6 +44,19 @@ namespace OnlinerLibrary.BaseElement
             return Element;
         }
 
+        public IWebElement GetLowerLevelItem(By locator)
+        {
+            try
+            {
+                Element = this.GetElement().FindElement(locator);
+            }
+            catch (NoSuchElementException)
+            {
+                Log.Fail("Element not found");
+            }
+            return Element;
+        }
+
         protected abstract string GetElementType();
 
         public void WaitForElementIsPresent()
@@ -81,6 +94,12 @@ namespace OnlinerLibrary.BaseElement
         {
             WaitForElementIsPresent();
             return Element.GetAttribute(attr);
+        }
+
+        public string GetText()
+        {
+            WaitForElementIsPresent();
+            return Element.Text;
         }
     }
 }

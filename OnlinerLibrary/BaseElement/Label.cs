@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlinerLibrary.BaseElement
 {
-    public class Label: BaseElement
+    public class Label : BaseElement
     {
         public Label(By locator) : base(locator)
         { }
@@ -17,7 +17,7 @@ namespace OnlinerLibrary.BaseElement
             return "Label";
         }
 
-        public static Label[] GetAllLabels(string locator)
+        public static Label[] GetAllLabels(string locator, string lowerLevelElementLocator = "")
         {
 
             int count = Driver.Browser.FindElements(By.XPath(locator)).Count;
@@ -26,14 +26,20 @@ namespace OnlinerLibrary.BaseElement
             {
                 for (int i = 0; i < count; i++)
                 {
-                    results[i] = new Label(By.XPath(locator + "[" + i + "]"));
+                    string elementLocator = locator + "[" + i + "]";
+                    if (lowerLevelElementLocator != "")
+                    {
+                        elementLocator += "/" + lowerLevelElementLocator;
+                    }
+
+                    results[i] = new Label(By.XPath(elementLocator));
                 }
             }
             return results;
         }
 
         public string GetHref()
-        {            
+        {
             return GetAttribute("href");
         }
     }

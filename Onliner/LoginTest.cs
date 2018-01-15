@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlinerLibrary;
-using OnlinerLibrary.PageObject.LoginPage;
-using OnlinerLibrary.PageObject.MainPage;
-using OnlinerLibrary.PageObject.CategoryPage;
+using OnlinerLibrary.PageObject;
 
 namespace OnlinerTests
 {
@@ -38,12 +36,13 @@ namespace OnlinerTests
             Assert.IsTrue(mainPage.IsProfileImageDisplayed());
 
             Logger.Instance.LogStep(3, "Go To Category Page");
-            string catalogHref = mainPage.GetCatalogHref();
-            CategoryPage categoryPage = new CategoryPage(catalogHref);
+            CategoryPage categoryPage = new CategoryPage();
             categoryPage.Navigate();
 
+            Logger.Instance.LogStep(4, "");
             categoryPage.GetRandomItemLabel();
-            categoryPage.NavigateToUrl(categoryPage.GetHrefCatalogItemLabel());            
+            categoryPage.NavigateToUrl(categoryPage.GetHrefCatalogItemLabel());
+            categoryPage.CheckGoToCategorySuccessfull();
         }
     }
 }

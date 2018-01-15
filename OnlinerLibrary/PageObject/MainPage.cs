@@ -1,7 +1,7 @@
 ﻿using OnlinerLibrary.BaseElement;
 using OpenQA.Selenium;
 
-namespace OnlinerLibrary.PageObject.MainPage
+namespace OnlinerLibrary.PageObject
 {
     public class MainPage : BasePage
     {
@@ -28,7 +28,7 @@ namespace OnlinerLibrary.PageObject.MainPage
 
         public void GoToCategoryPage()
         {
-            Link categoryLink = new Link(LocatorLinkMainNavigationCatalog);
+            var categoryLink = new Link(LocatorLinkMainNavigationCatalog);
             categoryLink.Click();
         }
 
@@ -36,10 +36,10 @@ namespace OnlinerLibrary.PageObject.MainPage
         {
             return GetElement(LocatorDivProfileImage).Displayed;
         }
-        
+
         public string GetCatalogHref()
         {
-            Link catalogLink = new Link(LocatorLinkMainNavigationCatalog);
+            var catalogLink = new Link(LocatorLinkMainNavigationCatalog);
             return catalogLink.GetHref();
         }
     }

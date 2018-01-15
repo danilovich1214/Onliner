@@ -1,6 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
 
 namespace OnlinerLibrary.BaseElement
 {
@@ -13,7 +11,6 @@ namespace OnlinerLibrary.BaseElement
         {
             return "Link";
         }
-
 
         public string GetHref()
         {

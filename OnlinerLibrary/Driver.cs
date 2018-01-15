@@ -62,10 +62,10 @@ namespace OnlinerLibrary
                     break;
 
                 case BrowserTypes.Chrome:
-                    System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", @"C:\Users\Evgenij\source\repos\Onliner\Drivers\chromedriver.exe");
+                    System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", @"C:\Users\Evgenij\source\repos\Onliner\packages\Chromium.ChromeDriver.2.33\content\chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.AddArgument("test-type");
-                    Driver.Browser = new ChromeDriver(@"D:\Onliner\packages\Chromium.ChromeDriver.2.33\content", options);
+                    Driver.Browser = new ChromeDriver(@"C:\Users\Evgenij\source\repos\Onliner\packages\Chromium.ChromeDriver.2.33\content", options);
                     break;
 
                 default:

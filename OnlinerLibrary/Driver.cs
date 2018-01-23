@@ -26,10 +26,7 @@ namespace OnlinerLibrary
                 return _browser;
             }
 
-            private set
-            {
-                _browser = value;
-            }
+            private set => _browser = value;
         }
 
         public static WebDriverWait BrowserWait
@@ -43,10 +40,7 @@ namespace OnlinerLibrary
                 return _browserWait;
             }
 
-            private set
-            {
-                _browserWait = value;
-            }
+            private set => _browserWait = value;
         }
 
         public static void StartBrowser(BrowserTypes browserType = BrowserTypes.Chrome, int defaultTimeOut = 30)
@@ -62,10 +56,10 @@ namespace OnlinerLibrary
                     break;
 
                 case BrowserTypes.Chrome:
-                    System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", @"C:\Users\Evgenij\source\repos\Onliner\packages\Chromium.ChromeDriver.2.33\content\chromedriver.exe");
-                    ChromeOptions options = new ChromeOptions();
+                    System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", Configuration.GetPathToDrivers() + @"\chromedriver.exe");
+                    var options = new ChromeOptions();
                     options.AddArgument("test-type");
-                    Driver.Browser = new ChromeDriver(@"C:\Users\Evgenij\source\repos\Onliner\packages\Chromium.ChromeDriver.2.33\content", options);
+                    Driver.Browser = new ChromeDriver(Configuration.GetPathToDrivers(), options);
                     break;
 
                 default:

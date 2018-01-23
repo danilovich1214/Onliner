@@ -65,6 +65,7 @@
     <Compile Include="BaseElement\TextBox.cs" />
     <Compile Include="BasePage.cs" />
     <Compile Include="BrowserTypes.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="PageObject\CategoryPage.cs" />

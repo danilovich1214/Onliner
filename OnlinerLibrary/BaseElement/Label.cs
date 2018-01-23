@@ -20,13 +20,13 @@ namespace OnlinerLibrary.BaseElement
         public static Label[] GetAllLabels(string locator, string lowerLevelElementLocator = "")
         {
 
-            int count = Driver.Browser.FindElements(By.XPath(locator)).Count;
+            var count = Driver.Browser.FindElements(By.XPath(locator)).Count;
             var results = new Label[count];
             if (count > 0)
             {
-                for (int i = 0; i < count; i++)
+                for (var i = 0; i < count; i++)
                 {
-                    string elementLocator = locator + "[" + i + "]";
+                    var elementLocator = locator + "[" + i + "]";
                     if (lowerLevelElementLocator != "")
                     {
                         elementLocator += "/" + lowerLevelElementLocator;

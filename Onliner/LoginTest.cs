@@ -25,7 +25,7 @@ namespace OnlinerTests
         [TestMethod]
         public void LogInAndGoToCategory()
         {
-            Logger.Instance.LogStep(1, "First Step1111111111111111111");
+            //Logger.Instance.LogStep(1, "First Step1111111111111111111");
             var mainPage = new MainPage();
             mainPage.Navigate();
             mainPage.AssertIsOpen();

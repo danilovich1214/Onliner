@@ -23,8 +23,6 @@ namespace OnlinerLibrary.PageObject
 
         public static By LocatorDivGoToLoginPage = By.XPath("//div[@class='auth-bar__item auth-bar__item--text']");
 
-        private Label _categoryItemLabel;
-
         public CategoryPage()
             : base("https://catalog.onliner.by/", TittleLocator)
         {
@@ -40,9 +38,9 @@ namespace OnlinerLibrary.PageObject
 
         public string GoToRandomCategory()
         {
-            _categoryItemLabel = GetRandomItemLabel();
-            var categoryText = _categoryItemLabel.GetText();
-            this.NavigateToUrl(_categoryItemLabel.GetHref());
+            var categoryItemLabel = GetRandomItemLabel();
+            var categoryText = categoryItemLabel.GetText();
+            this.NavigateToUrl(categoryItemLabel.GetHref());
             return categoryText;
         }
 

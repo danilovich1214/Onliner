@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.Design;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlinerLibrary.BaseElement;
+using OpenQA.Selenium;
+using System;
+using System.Linq;
 
 namespace OnlinerLibrary.PageObject
 {
@@ -67,7 +66,7 @@ namespace OnlinerLibrary.PageObject
         public void CheckLogOutIsSuccessfull()
         {
             var btnGoToLoginPage = new Button(LocatorDivGoToLoginPage);
-            Assert.IsTrue(btnGoToLoginPage.GetElement().Displayed,
+            Assert.IsTrue(btnGoToLoginPage.IsDisplayed(),
                 "Log Out Is not successfull");
         }
     }

@@ -25,7 +25,8 @@ namespace OnlinerLibrary.BaseElement
             {
                 for (var i = 0; i < count; i++)
                 {
-                    var elementLocator = locator + "[" + i + 1 + "]";
+                    var itemIndex = i + 1;
+                    var elementLocator = locator + "[" + itemIndex + "]";
                     if (lowerLevelElementLocator != "")
                     {
                         elementLocator += "/" + lowerLevelElementLocator;

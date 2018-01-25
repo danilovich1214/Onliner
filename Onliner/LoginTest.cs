@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlinerLibrary;
 using OnlinerLibrary.PageObject;
-using OpenQA.Selenium;
 
 namespace OnlinerTests
 {
@@ -11,8 +10,9 @@ namespace OnlinerTests
         public readonly string Username = "bluerayend@gmail.com";
         public readonly string Password = "1234567";
 
-        [DataRow(BrowserTypes.Chrome)]
-        //[DataRow(BrowserTypes.InternetExplorer)]
+        //[DataRow(BrowserTypes.Chrome)]
+        [DataRow(BrowserTypes.InternetExplorer)]
+        //[DataRow(BrowserTypes.Firefox)]
         [DataTestMethod]
         public void LogInAndGoToCategory(BrowserTypes typeBrowser)
         {

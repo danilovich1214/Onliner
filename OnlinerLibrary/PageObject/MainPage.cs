@@ -26,7 +26,9 @@ namespace OnlinerLibrary.PageObject
 
         public void CkeckProfileImageIsDisplayed()
         {
-            Assert.IsTrue(IsDisplayed(LocatorDivProfileImage),
+            var divProfileImage = new Label(LocatorDivProfileImage);
+
+            Assert.IsTrue(divProfileImage.IsDisplayed(),
                 "The profile image is not displayed");
         }
     }

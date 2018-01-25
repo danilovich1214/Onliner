@@ -80,5 +80,19 @@ namespace OnlinerLibrary.BaseElement
             WaitForElementIsPresent();
             return Element.Text;
         }
+
+        public bool IsDisplayed()
+        {
+            var element = Driver.Browser.FindElement(Locator);
+            var wait = new DefaultWait<IWebElement>(element)
+            {
+                Timeout = TimeSpan.FromMinutes(2),
+                PollingInterval = TimeSpan.FromMilliseconds(250)
+            };
+
+            var waiter = new Func<IWebElement, bool>((IWebElement ele) => ele.Displayed);
+
+            return wait.Until(waiter);
+        }
     }
 }

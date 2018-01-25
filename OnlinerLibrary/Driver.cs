@@ -9,7 +9,7 @@ namespace OnlinerLibrary
 {
     public static class Driver
     {
-        private static readonly double ElementTimeout = 60;
+        private static readonly double ElementTimeout = 120;
 
         private static WebDriverWait _browserWait;
 
@@ -43,7 +43,7 @@ namespace OnlinerLibrary
             private set => _browserWait = value;
         }
 
-        public static void StartBrowser(BrowserTypes browserType = BrowserTypes.Chrome, int defaultTimeOut = 30)
+        public static void StartBrowser(BrowserTypes browserType = BrowserTypes.Chrome, int defaultTimeOut = 90)
         {
             switch (browserType)
             {
@@ -75,7 +75,7 @@ namespace OnlinerLibrary
             }
 
             Driver.Browser.Manage().Window.Maximize();
-            Driver.Browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(defaultTimeOut);
+            Driver.Browser.Manage().Timeouts().ImplicitWait = Driver.GetElementTimeoutInSeconds();
 
             BrowserWait = new WebDriverWait(Driver.Browser, TimeSpan.FromSeconds(defaultTimeOut));
         }

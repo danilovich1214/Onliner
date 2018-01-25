@@ -9,7 +9,7 @@ namespace OnlinerLibrary
 {
     public static class Driver
     {
-        private static readonly double ElementTimeout = 30;
+        private static readonly double ElementTimeout = 60;
 
         private static WebDriverWait _browserWait;
 
@@ -52,14 +52,22 @@ namespace OnlinerLibrary
                     break;
 
                 case BrowserTypes.InternetExplorer:
-                    Driver.Browser = new InternetExplorerDriver(@"D:\Onliner\Drivers");
+                    var ieOptions = new InternetExplorerOptions
+                    {
+                        IntroduceInstabilityByIgnoringProtectedModeSettings = true,
+                        IgnoreZoomLevel = true,
+                        EnableNativeEvents = true,
+                        EnsureCleanSession = true
+                    };
+                    System.Environment.SetEnvironmentVariable("webdriver.ie.driver", Configuration.GetPathToDrivers() + @"\IEDriverServer.exe");
+                    Driver.Browser = new InternetExplorerDriver(Configuration.GetPathToDrivers(), ieOptions);
                     break;
 
                 case BrowserTypes.Chrome:
                     System.Environment.SetEnvironmentVariable("webdriver.chrome.driver", Configuration.GetPathToDrivers() + @"\chromedriver.exe");
-                    var options = new ChromeOptions();
-                    options.AddArgument("test-type");
-                    Driver.Browser = new ChromeDriver(Configuration.GetPathToDrivers(), options);
+                    var chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArgument("test-type");
+                    Driver.Browser = new ChromeDriver(Configuration.GetPathToDrivers(), chromeOptions);
                     break;
 
                 default:
@@ -67,7 +75,7 @@ namespace OnlinerLibrary
             }
 
             Driver.Browser.Manage().Window.Maximize();
-            Driver.Browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Driver.Browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(defaultTimeOut);
 
             BrowserWait = new WebDriverWait(Driver.Browser, TimeSpan.FromSeconds(defaultTimeOut));
         }
@@ -79,6 +87,7 @@ namespace OnlinerLibrary
 
         public static void StopBrowser()
         {
+            Browser.Close();
             Browser.Quit();
             Browser = null;
             BrowserWait = null;

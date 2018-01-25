@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OnlinerLibrary
+﻿namespace OnlinerLibrary
 {
     public static class Configuration
     {
@@ -12,7 +6,7 @@ namespace OnlinerLibrary
 
         static Configuration()
         {
-            PathToDivers = System.Environment.CurrentDirectory + "/Drivers";
+            PathToDivers = System.Environment.CurrentDirectory + @"\Drivers";
         }
         
         public static string GetPathToDrivers()

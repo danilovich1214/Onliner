@@ -21,7 +21,7 @@ namespace OnlinerLibrary.PageObject
 
         public static readonly By DivProfileImageLocator = By.XPath("//div[contains(@class, 'b-top-profile__item_arrow')]");
 
-        public static By LocatorDivGoToLoginPage = By.XPath("//div[@class='auth-bar__item auth-bar__item--text']");
+        public static By LocatorDivGoToLoginPage = By.XPath("//div[contains(@class, 'auth-bar')]/div[contains(@class, 'auth-bar__item')]");
 
         public CategoryPage()
             : base("https://catalog.onliner.by/", TittleLocator)

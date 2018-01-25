@@ -11,7 +11,7 @@ namespace OnlinerLibrary
         private Logger()
         {
             XmlConfigurator.Configure();
-            _log = LogManager.GetLogger("Console");
+            _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
 
         public static Logger Instance => _instance ?? (_instance = new Logger());

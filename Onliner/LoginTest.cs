@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlinerLibrary;
 using OnlinerLibrary.PageObject;
+using OpenQA.Selenium;
 
 namespace OnlinerTests
 {
@@ -10,22 +11,14 @@ namespace OnlinerTests
         public readonly string Username = "bluerayend@gmail.com";
         public readonly string Password = "1234567";
 
-        [TestInitialize]
-        public void SetupTest()
+        [DataRow(BrowserTypes.Chrome)]
+        //[DataRow(BrowserTypes.InternetExplorer)]
+        [DataTestMethod]
+        public void LogInAndGoToCategory(BrowserTypes typeBrowser)
         {
-            Driver.StartBrowser();
-        }
+            Driver.StartBrowser(typeBrowser);
 
-        [TestCleanup]
-        public void TeardownTest()
-        {
-            Driver.StopBrowser();
-        }
-
-        [TestMethod]
-        public void LogInAndGoToCategory()
-        {
-            //Logger.Instance.LogStep(1, "First Step1111111111111111111");
+            Logger.Instance.Info("Hello logging world!");
             var mainPage = new MainPage();
             mainPage.Navigate();
             mainPage.AssertIsOpen();
@@ -47,6 +40,12 @@ namespace OnlinerTests
             categoryPage.ClickToProfileImage();
             categoryPage.LogOut();
             categoryPage.CheckLogOutIsSuccessfull();
+        }
+
+        [TestCleanup]
+        public void TeardownTest()
+        {
+            Driver.StopBrowser();
         }
     }
 }

@@ -6,9 +6,9 @@ namespace OnlinerLibrary.PageObject
 {
     public class MainPage : BasePage
     {
-        public static By TitleLocator = By.CssSelector("div[class='b-tiles cfix ']");
+        public static By TitleLocator = By.XPath("//div[@class='g-middle-i']/div[contains(@class, 'b-tiles')]");
 
-        public static By LocatorDivGoToLoginPage = By.XPath("//div[@class='auth-bar__item auth-bar__item--text']");
+        public static By LocatorDivGoToLoginPage = By.XPath("//div[contains(@class,'auth-bar')]/div[contains(@class,'auth-bar__item')]");
 
         public static By LocatorDivProfileImage = By.CssSelector("div[class='b-top-profile__image']");
 
@@ -26,7 +26,7 @@ namespace OnlinerLibrary.PageObject
 
         public void CkeckProfileImageIsDisplayed()
         {
-            Assert.IsTrue(GetElement(LocatorDivProfileImage).Displayed,
+            Assert.IsTrue(IsDisplayed(LocatorDivProfileImage),
                 "The profile image is not displayed");
         }
     }

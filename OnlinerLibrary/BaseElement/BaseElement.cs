@@ -48,19 +48,66 @@ namespace OnlinerLibrary.BaseElement
 
         public void WaitForElementIsPresent()
         {
-            var wait = new WebDriverWait(Driver.Browser, Driver.GetElementTimeoutInSeconds());
-            Element = wait.Until(d =>
+            try
             {
-                try
+                var wait = new WebDriverWait(Driver.Browser, Driver.GetElementTimeoutInSeconds());
+                Element = wait.Until(d =>
                 {
-                    var elements = d.FindElements(Locator);
-                    return elements.FirstOrDefault(webElement => webElement.Displayed);
-                }
-                catch (NoSuchElementException)
+                    try
+                    {
+                        var elements = d.FindElements(Locator);
+                        return elements.FirstOrDefault(webElement => webElement.Displayed);
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        return null;
+                    }
+                });
+            }
+            catch (TimeoutException ex)
+            {
+                Driver.Browser.Navigate().Refresh();
+                if (!IsPresent())
                 {
-                    return null;
+                    Logger.Instance.Fail(ex.Message + "\n" + "Element is not Present" + " by locator: " + Locator);
                 }
-            });
+            }
+        }
+
+        public bool IsPresent()
+        {
+            return IsPresent(5);
+        }
+
+        public bool IsPresent(int sec)
+        {
+            var wait = new WebDriverWait(Driver.Browser, TimeSpan.FromSeconds(Convert.ToDouble(sec)));
+            try
+            {
+                wait.Until(waiting =>
+                {
+                    var elements = Driver.Browser.FindElements(Locator);
+                    try
+                    {
+                        foreach (var webElement in elements.Where(webElement => webElement.Displayed))
+                        {
+                            Element = webElement;
+                            return true;
+                        }
+                    }
+                    catch (StaleElementReferenceException)
+                    {
+                        return false;
+                    }
+                    return false;
+                });
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                Logger.Instance.Debug("Element is not present: " + e.StackTrace);
+                return false;
+            }
+            return true;
         }
 
         public void ActionsClick()

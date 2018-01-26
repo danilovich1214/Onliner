@@ -25,7 +25,7 @@ namespace OnlinerLibrary.PageObject
             var txtBoxPassword = new TextBox(TxtPasswordLocator);
             txtBoxPassword.SetText(password);
             var btnLogin = new Button(BtnLoginLocator);
-            btnLogin.Click();
+            btnLogin.ActionsClick();
         }
     }
 }

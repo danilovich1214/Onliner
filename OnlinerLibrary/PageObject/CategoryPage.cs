@@ -3,6 +3,7 @@ using OnlinerLibrary.BaseElement;
 using OpenQA.Selenium;
 using System;
 using System.Linq;
+using System.Threading;
 
 namespace OnlinerLibrary.PageObject
 {
@@ -66,6 +67,10 @@ namespace OnlinerLibrary.PageObject
         public void CheckLogOutIsSuccessfull()
         {
             var btnGoToLoginPage = new Button(LocatorDivGoToLoginPage);
+            if (Driver.BrowserType == BrowserTypes.InternetExplorer)
+            {
+                Thread.Sleep(500);
+            }
             Assert.IsTrue(btnGoToLoginPage.IsDisplayed(),
                 "Log Out Is not successfull");
         }

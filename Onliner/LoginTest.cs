@@ -10,9 +10,9 @@ namespace OnlinerTests
         public readonly string Username = "bluerayend@gmail.com";
         public readonly string Password = "1234567";
 
-        //[DataRow(BrowserTypes.Chrome)]
         [DataRow(BrowserTypes.InternetExplorer)]
-        //[DataRow(BrowserTypes.Firefox)]
+        [DataRow(BrowserTypes.Firefox)]
+        [DataRow(BrowserTypes.Chrome)]
         [DataTestMethod]
         public void LogInAndGoToCategory(BrowserTypes typeBrowser)
         {
@@ -29,7 +29,7 @@ namespace OnlinerTests
 
             loginPage.LogIn(Username, Password);
             mainPage.CkeckProfileImageIsDisplayed();
-            
+
             var categoryPage = new CategoryPage();
             categoryPage.Navigate();
             categoryPage.AssertIsOpen();

@@ -28,7 +28,6 @@ C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\Microsoft.VisualS
 C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\Evgenij\source\repos\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.dll.config
-C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\bin\Debug\Drivers\chromedriver.exe
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.dll.config
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.dll
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\bin\Debug\OnlinerLibrary.pdb

@@ -45,7 +45,6 @@ D:\Onliner\Onliner\bin\Debug\log4net.xml
 D:\Onliner\Onliner\bin\Debug\Drivers\chromedriver.exe
 C:\Users\Evgenij\source\repos\Onliner\Onliner\bin\Debug\Drivers\chromedriver.exe
 C:\Users\Evgenij\source\repos\Onliner\Onliner\bin\Debug\OnlinerLibrary.dll.config
-C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\bin\Debug\Drivers\chromedriver.exe
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll

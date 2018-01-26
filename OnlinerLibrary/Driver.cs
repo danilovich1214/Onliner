@@ -15,6 +15,8 @@ namespace OnlinerLibrary
 
         private static IWebDriver _browser;
 
+        private static BrowserTypes _browserType;
+
         public static IWebDriver Browser
         {
             get
@@ -27,6 +29,20 @@ namespace OnlinerLibrary
             }
 
             private set => _browser = value;
+        }
+
+        public static BrowserTypes BrowserType
+        {
+            get
+            {
+                if (_browserType == null)
+                {
+                    throw new NullReferenceException("The BrowserType instance was not initialized. You should first call the method Start.");
+                }
+                return _browserType;
+            }
+
+            private set => _browserType = value;
         }
 
         public static WebDriverWait BrowserWait
@@ -48,7 +64,9 @@ namespace OnlinerLibrary
             switch (browserType)
             {
                 case BrowserTypes.Firefox:
-                    Driver.Browser = new FirefoxDriver(@"C:\Users\Evgenij\source\repos\Onliner\Drivers");
+                    System.Environment.SetEnvironmentVariable("webdriver.gecko.driver", Configuration.GetPathToDrivers() + @"\geckodriver.exe");
+                    System.Environment.SetEnvironmentVariable("webdriver.firefox.bin", @"C:\Program Files (x86)\Mozilla Firefox/firefox.exe");
+                    Driver.Browser = new FirefoxDriver(Configuration.GetPathToDrivers());
                     break;
 
                 case BrowserTypes.InternetExplorer:
@@ -74,6 +92,7 @@ namespace OnlinerLibrary
                     break;
             }
 
+            BrowserType = browserType;
             Driver.Browser.Manage().Window.Maximize();
             Driver.Browser.Manage().Timeouts().ImplicitWait = Driver.GetElementTimeoutInSeconds();
 
@@ -87,7 +106,6 @@ namespace OnlinerLibrary
 
         public static void StopBrowser()
         {
-            Browser.Close();
             Browser.Quit();
             Browser = null;
             BrowserWait = null;

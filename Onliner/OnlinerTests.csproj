@@ -63,8 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="log4net.config" />
-    <None Include="myapp.log" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

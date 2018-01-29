@@ -1,0 +1,7 @@
+2018-01-29 01:56:26,624 [11] INFO OnlinerLibrary.Logger - <font style='color: #ffffff; background-color: grey'>------------------------------------------[ Step 1 ]: Go To Main Page</font>
+2018-01-29 02:01:17,734 [11] INFO OnlinerLibrary.Logger - ---[ Step 1 ]: Go to main page</font>
+2018-01-29 02:01:32,113 [11] INFO OnlinerLibrary.Logger - ---[ Step 2 ]: Go to login page</font>
+2018-01-29 02:01:37,644 [11] INFO OnlinerLibrary.Logger - ---[ Step 3 ]: Log in</font>
+2018-01-29 02:01:46,253 [11] INFO OnlinerLibrary.Logger - ---[ Step 4 ]: Go to category page</font>
+2018-01-29 02:01:53,665 [11] INFO OnlinerLibrary.Logger - ---[ Step 5 ]: Go to random category</font>
+2018-01-29 02:02:04,606 [11] INFO OnlinerLibrary.Logger - ---[ Step 6 ]: Log out</font>

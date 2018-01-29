@@ -69,7 +69,7 @@ namespace OnlinerLibrary.PageObject
             var btnGoToLoginPage = new Button(LocatorDivGoToLoginPage);
             if (Driver.BrowserType == BrowserTypes.InternetExplorer)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(1200);
             }
             Assert.IsTrue(btnGoToLoginPage.IsDisplayed(),
                 "Log Out Is not successfull");

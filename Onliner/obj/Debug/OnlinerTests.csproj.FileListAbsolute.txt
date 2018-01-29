@@ -67,3 +67,4 @@ C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\obj\Debug\OnlinerTe
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\obj\Debug\OnlinerTests.csproj.CoreCompileInputs.cache
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\obj\Debug\Onliner.dll
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\obj\Debug\Onliner.pdb
+C:\Users\Evgenij\source\repos\danilovich1214\Onliner\Onliner\bin\Debug\log4net.config

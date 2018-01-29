@@ -45,3 +45,4 @@ C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\obj\Debug\On
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.dll
 C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\obj\Debug\OnlinerLibrary.pdb
+C:\Users\Evgenij\source\repos\danilovich1214\Onliner\OnlinerLibrary\bin\Debug\log4net.config

@@ -5,36 +5,36 @@ namespace OnlinerLibrary
 {
     public class Logger
     {
-        private readonly ILog _log;
+        private static readonly ILog Log;
         private static Logger _instance;
 
-        private Logger()
+        static Logger()
         {
             XmlConfigurator.Configure();
-            _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
 
         public static Logger Instance => _instance ?? (_instance = new Logger());
 
         public void Fail(string message)
         {
-            _log.Fatal(message);
+            Log.Fatal(message);
         }
 
         public void Info(string message)
         {
-            _log.Info(message);
+            Log.Info(message);
         }
 
         public void Debug(string format)
         {
-            _log.Debug(format);
+            Log.Debug(format);
         }
 
         public void LogStep(int step, string message)
         {
             Info(
-                $"<font style='color: #ffffff; background-color: grey'>------------------------------------------[ Step {step} ]: {message}</font>");
+                $"---[ Step {step} ]: {message}");
         }
     }
 }
